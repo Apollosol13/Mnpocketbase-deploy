@@ -11,5 +11,5 @@ RUN unzip pb.zip && rm pb.zip
 # Expose port
 EXPOSE 8080
 
-# Start PocketBase with fresh database
-CMD ["sh", "-c", "rm -f pb_data/data.db && ./pocketbase serve --http=0.0.0.0:8080"]
+# Start PocketBase with completely fresh database
+CMD ["sh", "-c", "rm -rf pb_data && ./pocketbase serve --http=0.0.0.0:8080"]
